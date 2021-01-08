@@ -54,7 +54,6 @@ It's composed of 10 modules:
 	- [Other ORMs](#other-orms)
 	- [Rails API mode](#rails-api-mode)
 - [Additional information](#additional-information)
-	- [Heroku](#heroku)
 	- [Warden](#warden)
 	- [Contributors](#contributors)
 - [License](#license)
@@ -120,7 +119,7 @@ Devise works with multiple Ruby and Rails versions, and ActiveRecord and Mongoid
 
 ### DEVISE_ORM
 Since Devise support both Mongoid and ActiveRecord, we rely on this variable to run specific code for each ORM.
-The default value of `DEVISE_ORM` is `active_record`. To run the tests for mongoid, you can pass `mongoid`:
+The default value of `DEVISE_ORM` is `active_record`. To run the tests for Mongoid, you can pass `mongoid`:
 ```
 DEVISE_ORM=mongoid bin/test
 
@@ -166,10 +165,10 @@ bin/test test/models/trackable_test.rb:16
 
 ## Starting with Rails?
 
-If you are building your first Rails application, we recommend you *do not* use Devise. Devise requires a good understanding of the Rails Framework. In such cases, we advise you to start a simple authentication system from scratch. Today, we have three resources that should help you get started:
+If you are building your first Rails application, we recommend you *do not* use Devise. Devise requires a good understanding of the Rails Framework. In such cases, we advise you to start a simple authentication system from scratch. Here's a few resources that should help you get started:
 
 * Michael Hartl's online book: https://www.railstutorial.org/book/modeling_users
-* Ryan Bates' Railscast: http://railscasts.com/episodes/250-authentication-from-scratch
+* Ryan Bates' Railscasts: http://railscasts.com/episodes/250-authentication-from-scratch and http://railscasts.com/episodes/250-authentication-from-scratch-revised
 * Codecademy's Ruby on Rails: Authentication and Authorization: https://www.codecademy.com/learn/rails-auth
 
 Once you have solidified your understanding of Rails and authentication mechanisms, we assure you Devise will be very pleasant to work with. :smiley:
@@ -273,7 +272,7 @@ Besides `:stretches`, you can define `:pepper`, `:encryptor`, `:confirm_within`,
 
 ### Strong Parameters
 
-![The Parameter Sanitizer API has changed for Devise 4](http://messages.hellobits.com/warning.svg?message=The%20Parameter%20Sanitizer%20API%20has%20changed%20for%20Devise%204)
+The Parameter Sanitizer API has changed for Devise 4 :warning:
 
 *For previous Devise versions see https://github.com/heartcombo/devise/tree/3-stable#strong-parameters*
 
@@ -313,7 +312,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-Devise allows you to completely change Devise defaults or invoke custom behaviour by passing a block:
+Devise allows you to completely change Devise defaults or invoke custom behavior by passing a block:
 
 To permit simple scalar values for username and email, use this
 
@@ -436,7 +435,7 @@ If the customization at the views level is not enough, you can customize each co
     end
     ```
 
-    Or you can simply add new behaviour to it:
+    Or you can simply add new behavior to it:
 
     ```ruby
     class Users::SessionsController < Devise::SessionsController
@@ -727,21 +726,11 @@ Additionally be mindful that without views supported, some email-based flows fro
 
 ## Additional information
 
-### Heroku
-
-Using Devise on Heroku with Ruby on Rails 3.2 requires setting:
-
-```ruby
-config.assets.initialize_on_precompile = false
-```
-
-Read more about the potential issues at http://guides.rubyonrails.org/asset_pipeline.html
-
 ### Warden
 
 Devise is based on Warden, which is a general Rack authentication framework created by Daniel Neighman. We encourage you to read more about Warden here:
 
-https://github.com/hassox/warden
+https://github.com/wardencommunity/warden
 
 ### Contributors
 
@@ -751,6 +740,6 @@ https://github.com/heartcombo/devise/graphs/contributors
 
 ## License
 
-MIT License. Copyright 2020 Rafael França, Leaonardo Tegon, Carlos Antônio da Silva. Copyright 2009-2019 Plataformatec.
+MIT License. Copyright 2020 Rafael França, Leonardo Tegon, Carlos Antônio da Silva. Copyright 2009-2019 Plataformatec.
 
 The Devise logo is licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
