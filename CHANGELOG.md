@@ -1,6 +1,24 @@
-### Unreleased
+### unreleased
+
+* deprecations
+  * `Devise::Models::Authenticatable::BLACKLIST_FOR_SERIALIZATION` is deprecated in favor of `Devise::Models::Authenticatable::UNSAFE_ATTRIBUTES_FOR_SERIALIZATION` (@hanachin)
+
+### 4.7.3 - 2020-09-20
+
+* bug fixes
+  * Do not modify `:except` option given to `#serializable_hash`. (by @dpep)
+  * Fix thor deprecation when running the devise generator. (by @deivid-rodriguez)
+  * Fix hanging tests for streaming controllers using Devise. (by @afn)
+
+### 4.7.2 - 2020-06-10
+
 * enhancements
   * Increase default stretches to 12 (by @sergey-alekseev)
+  * Ruby 2.7 support (kwarg warnings removed)
+
+* bug fixes
+  * Generate scoped views with proper scoped errors partial (by @shobhitic)
+  * Allow to set scoped `already_authenticated` error messages (by @gurgelrenan)
 
 ### 4.7.1 - 2019-09-06
 
